@@ -17,15 +17,8 @@ if [ ! -d "/app" ]; then
 		elif [ -n "$GIT_VERSION" ]; then
 			git --git-dir /app/.git checkout "$GIT_VERSION"
 		fi
-		/build/builder
 	else
 		echo "No \$GIT_REPO environment variable defined"
 		exit 1
 	fi
-fi
-
-if [ "$1" == "/start" ]; then
-	exec $@
-else
-	exec /exec $@
 fi
