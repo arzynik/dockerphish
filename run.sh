@@ -4,12 +4,12 @@ if [ "$#" -eq 0 ]; then
         exit 1
 fi
 
-if [ $TUTUM_TRIGGER_BODY =~ ^GIT_BRANCH:.*$ ]; then
+if [[ $TUTUM_TRIGGER_BODY =~ ^GIT_BRANCH:.*$ ]]; then
 	echo "Using \$GIT_BRANCH from \$TUTUM_TRIGGER_BODY"
 	GIT_BRANCH=$(echo "$TUTUM_TRIGGER_BODY" | sed -E 's#GIT_BRANCH:(.*)#\1#g')
 fi
 
-if [ $TUTUM_TRIGGER_BODY =~ ^GIT_VERSION:.*$ ]; then
+if [[ $TUTUM_TRIGGER_BODY =~ ^GIT_VERSION:.*$ ]]; then
 	echo "Using \$GIT_VERSION from \$TUTUM_TRIGGER_BODY"
 	GIT_BRANCH=$(echo "$TUTUM_TRIGGER_BODY" | sed -E 's#GIT_VERSION:(.*)#\1#g')
 fi
