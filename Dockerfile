@@ -15,8 +15,10 @@ RUN apt-get update && apt-get install -y \
 
 ADD nginx.conf /etc/nginx/sites-available/default
 RUN echo "cgi.fix_pathinfo = 0;" >> /usr/local/etc/php/conf.d/fix_pathinfo.ini
-RUN echo " \n\
-listen = 127.0.0.1:9000" >> /usr/local/etc/php-fpm.conf
+RUN echo "
+listen = 127.0.0.1:9000
+security.limit_extensions = .php .scss
+" >> /usr/local/etc/php-fpm.conf
 
 ADD run.sh /run.sh
 

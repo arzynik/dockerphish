@@ -28,6 +28,10 @@ if [ ! -d "/app" ]; then
 				git clone --single-branch --depth 1 "$GIT_REPO" /app
 			fi
 		fi
+		if [-f /app/build/build.sh ]; then
+			/app/build/build.sh
+		fi
+
 	else
 		echo "No \$GIT_REPO environment variable defined"
 		exit 1
