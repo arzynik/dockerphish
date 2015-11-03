@@ -23,8 +23,4 @@ if [ ! -d "/app" ]; then
 	fi
 fi
 
-if [ "$1" == "/start" ]; then
-	exec $@
-else
-	exec /exec $@
-fi
+exec $@
