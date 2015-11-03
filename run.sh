@@ -23,4 +23,4 @@ if [ ! -d "/app" ]; then
 	fi
 fi
 
-exec $@
+nginx && php-fpm

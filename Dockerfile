@@ -25,5 +25,4 @@ RUN php -v
 
 ONBUILD ADD . /app
 
-ENTRYPOINT ["/run.sh"]
-CMD nginx && php-fpm
+CMD /run.sh
