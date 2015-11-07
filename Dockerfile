@@ -21,7 +21,8 @@ listen = 127.0.0.1:9000 \n\
 security.limit_extensions = .php .scss \n\
 " >> /usr/local/etc/php-fpm.conf
 
-RUN sed -i 's/^# server_tokens off;$/server_tokens off;/' /etc/nginx/nginx.conf
+# would be nice to get this to work
+# RUN sed -i 's/^# server_tokens off;$/server_tokens off;/' /etc/nginx/nginx.conf
 
 ADD run.sh /run.sh
 
