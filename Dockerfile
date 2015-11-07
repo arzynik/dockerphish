@@ -1,4 +1,5 @@
 FROM php:7.0-fpm
+MAINTAINER Devin Smith <docker@arzynik.com>
 
 ENV DOCKER=1
 
@@ -19,6 +20,8 @@ RUN echo " \n\
 listen = 127.0.0.1:9000 \n\
 security.limit_extensions = .php .scss \n\
 " >> /usr/local/etc/php-fpm.conf
+
+RUN sed -i 's/^# server_tokens off;$/server_tokens off;/' /etc/nginx/nginx.conf
 
 ADD run.sh /run.sh
 
