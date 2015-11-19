@@ -29,6 +29,7 @@ if [ ! -d "/app" ]; then
 			fi
 		fi
 		if [ -f "/app/build.sh" ]; then
+			chmod +x /app/build.sh
 			/app/build.sh
 		fi
 
