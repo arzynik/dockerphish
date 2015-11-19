@@ -11,9 +11,11 @@ RUN apt-get update && apt-get install -y \
         curl \
         git \
 		nginx \
+		zlib1g-dev \
     && docker-php-ext-install iconv mcrypt \
 	&& docker-php-ext-install pdo pdo_mysql \
-	&& docker-php-ext-install mbstring
+	&& docker-php-ext-install mbstring \
+	&& docker-php-ext-install zip
 
 ENV PHPREDIS_VERSION php7
 
