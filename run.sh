@@ -28,8 +28,8 @@ if [ ! -d "/app" ]; then
 				git clone --single-branch --depth 1 "$GIT_REPO" /app
 			fi
 		fi
-		if [ -f "/app/build/build.sh" ]; then
-			/app/build/build.sh
+		if [ -f "/app/build.sh" ]; then
+			/app/build.sh
 		fi
 
 	else
