@@ -38,4 +38,4 @@ if [ ! -d "/app" ]; then
 	fi
 fi
 
-nginx && php-fpm
+exec "$@"
