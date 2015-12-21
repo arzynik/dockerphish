@@ -14,7 +14,7 @@ if [[ $TUTUM_TRIGGER_BODY =~ ^GIT_VERSION:.*$ ]]; then
 	GIT_BRANCH=$(echo "$TUTUM_TRIGGER_BODY" | sed -E 's#GIT_VERSION:(.*)#\1#g')
 fi
 
-if [ ! -d "/app" ]; then
+if [ -d "/app" ]; then
 	rm -Rf /app
 fi
 
